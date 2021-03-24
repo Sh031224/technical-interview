@@ -165,8 +165,8 @@ React 부분
 16. useMemo
     - [] 안에 값이 바뀌었을 때만 다시 호출
     - useCallback과의 차이는 Callback은 함수를 반환, Memo는 값을 반환
-17.  useEffect
-    - - async/await 을 직접적으로 사용하면 안됨
+17. useEffect
+    - async/await 을 직접적으로 사용하면 안됨
     - [] 안쓰면 렌더링 시, 쓰면 마운트 시
 18. useReducer
     - 하나의 state를 여러가지 action 으로 변경 할 때 사용
