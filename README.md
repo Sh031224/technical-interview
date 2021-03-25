@@ -23,8 +23,7 @@
     - 코드가 실행되면 Call Stack에 쌓이고, Stack에서는 선입후출 룰 대로 실행된다.
         - 비동기 함수가 실행된다면, Web API가 호출된다.
         - Web API는 비동기함수의 콜백함수를 Callback Queue에 밀어넣는다.
-        - Promise는 Microtask Queue로, Timeout은 Task Queue로,
-        - RequestAnimationFrame은 Animation Frame으로 콜백함수를 밀어넣는다.
+        - Promise는 Microtask Queue로, Timeout은 Task Queue로, RequestAnimationFrame은 Animation Frame으로 콜백함수를 밀어넣는다.
             - Event Loop는 Call Stack이 빈 상태가 되면 콜백을 Call Stack으로 이동시킨다. (동시성 지원)
         - 콜백 이동 우선순위는 Microtask Queue > Animation Frames > Task Queue 이다.
 8. 깊은복사 얕은복사
