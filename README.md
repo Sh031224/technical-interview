@@ -20,11 +20,13 @@
 7. 자바스크립트 런타임
     - 자바스크립트가 돌아가는 실행환경을 자바스크립트 런타임이라고 부름.
     - 런타임은 자바스크립트 엔진(메모리 힙, 콜 스택), Web Apis, 이벤트 루프, 콜백 큐로 이루어짐.
-    - 기본적으로 자바스크립트 코드가 실행되면 실행 순서에 따라 스택 프레임이 엔진의 콜 스택에 쌓이게 됨.
-    - 이 때 이벤트 등 비동기 콜백은 콜 스택이 아니라 콜백 큐에서 대기함.
-    - 콜 스택이 비었을 때 콜백 큐에서 콜 스택으로 이동.
-    - Event loop: js는 싱글 스레드 기반 언어라서 함수를 실행하면 함수 호출이 스택에 순차적으로 쌓이고 스택의 맨위에서부터 아래로 한번에 하나의 함수만 처리 할 수 있음.
-    - 하지만, 자바스크립트에는 이벤트 루프라는것을 통해 동시성을 지원한다. 이벤트 발생 시 호출되는 콜백 함수들을 관리하여 태스크 큐에 전달하고, 콜스택이 비었을 때 태스크 큐에 담겨있는 콜백 함수들을 콜스택에 넘겨줍니다.
+    - 코드가 실행되면 Call Stack에 쌓이고, Stack에서는 선입후출 룰 대로 실행된다.
+        - 비동기 함수가 실행된다면, Web API가 호출된다.
+        - Web API는 비동기함수의 콜백함수를 Callback Queue에 밀어넣는다.
+        - Promise는 Microtask Queue로, Timeout은 Task Queue로,
+        - RequestAnimationFrame은 Animation Frame으로 콜백함수를 밀어넣는다.
+            - Event Loop는 Call Stack이 빈 상태가 되면 콜백을 Call Stack으로 이동시킨다. (동시성 지원)
+        - 콜백 이동 우선순위는 Microtask Queue > Animation Frames > Task Queue 이다.
 8. 깊은복사 얕은복사
     - 원시값: boolean, string, number, undefined , null , symbol -> 깊은복사
     - 참조값: Object -> 얕은복사 (같은 메모리 공유)
