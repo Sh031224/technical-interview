@@ -26,87 +26,95 @@
         - Promise는 Microtask Queue로, Timeout은 Task Queue로, RequestAnimationFrame은 Animation Frame으로 콜백함수를 밀어넣는다.
             - Event Loop는 Call Stack이 빈 상태가 되면 콜백을 Call Stack으로 이동시킨다. (동시성 지원)
         - 콜백 이동 우선순위는 Microtask Queue > Animation Frames > Task Queue 이다.
-8. 깊은복사 얕은복사
+8. setTimeout 0ms
+    - setTimeout 0ms를 실행하면 0초를 기다리고 즉시 실행되는 것이 아니다.
+        - setTimeout 함수를 실행하게 되면 Web Apis를 호출하고, 그 동안은 계속 Call Stack에 여러 함수들이 들어가고 나오면서 함수들이 실행된다.
+        - Web Apis에서 0초를 기다리고 Callback Queue로 넣는데, Event Loop는 Call Stack이 비어 있어야 Callback Queue에서 Call Stack으로 이동한다.
+            - 만약 setTimeout 0ms 이후 3초가 걸리는 함수를 실행한다면, setTimeout의 콜백 함수는 3초 후에 실행되는 꼴이다.
+            - setTimeout의 delay인자가 delay ms 후에 실행 되는 것을 보장하지 않는다는 사실을 알 수 있다. 정확히는 delay ms 후에 Callback Queue에 들어가는 것을 보장한다.
+        - 사실 0초를 기다리진 않는다.
+            - 최소값은 브라우저에 의해 결정되며 0ms가 아니다. 원래 브라우저는이 최소값을 10ms로 설정하지만 HTML5 사양 및 최신 브라우저에서는 4ms로 설정되어 있다.
+9. 깊은복사 얕은복사
     - 원시값: boolean, string, number, undefined , null , symbol -> 깊은복사
     - 참조값: Object -> 얕은복사 (같은 메모리 공유)
-9. Prototype
+10. Prototype
     - 자바스크립트는 프로토타입을 기반으로 상속을 구현하여 불필요한 중복을 제거함.
     - 객체의 프로토타입을 구현 해놓으면, 자식 객체와 프로토타입의 자산을 공유하여 사용 할 수 있음.
-10. Symbol
+11. Symbol
     - 프로그램이 이름 충돌의 위험 없이 속성의 키로 쓰기 위해 생성하고 사용 할 수 있는 값
-11. 스프레드 연산자
+12. 스프레드 연산자
     - 배열, 객체를 복사 하거나 합칠 때 간단하게 사용할 수 있게 해주는 es6 문법
-12. Promise
+13. Promise
     - 비동기 작업이 맞이할 미래의 완료 또는 실패와 그 결과 값을 나타내는 객체
-13. HTML vs HTML5
+14. HTML vs HTML5
     - 기존의 html 문서타입 보다 간결해짐.
     - 시멘틱 태그 추가.
     - 비디오와 오디오를 자체적으로 지원
-14. 브라우저 동작과정
+15. 브라우저 동작과정
     - 특정 주소로 들어가면 서버에 요청이 전송.
     - 렌더링 엔진이 해당 페이지에 있는 html과 css를 해석하여 DOM 트리를 구축
     - DOM 트리와 css 정보를 담은 스타일 구조체를 연결시켜 렌더 트리를 만듦
     - 화면에 배치
-15. TypeScript 쓰는 이유
+16. TypeScript 쓰는 이유
     - 컴파일 단계에서 타입 오류를 발견 할 수 있음.
     - ES6 지원
     - IDE와 같은 도구에게 타입 정보를 제공함으로써 더 큰 지원을 받을 수 있다.
-16. yarn.lock & package.json
+17. yarn.lock & package.json
     - 의존성 트리에 대한 정보
-17. 검색엔진 최적화
+18. 검색엔진 최적화
     - Title 태그와 meta 태그를 이용하여 사이트의 제목과 설명 등을 설정
     - 모바일 친화적으로 사이트를 개발
     - 시맨틱 태그 사용
     - 제목과 부제 등 h1~h6태그, p태그 등을 활용
-18. CSR vs SSR
+19. CSR vs SSR
     - CSR: 초기 로딩 이후 페이지 전환이 빠르고 서버에 부담이 덜감. 검색 엔진 최적화 불리.
     - SSR: 검색 엔진 최적화. 페이지 이동시 지속적으로 서버에 요청하기 때문에 페이지 전환 느림.
-19. article과 section 태그의 차이
+20. article과 section 태그의 차이
     - article: 같은 성격/유형의 컨텐츠끼리 묶을 때 사용. 태그 안의 컨텐츠만으로 독립이 가능하면 article 사용 애플워치 os 에서 읽기모드로 접속 시 article을 기준으로 읽음
     - section: 같은 성격/유형의 컨텐츠끼리 묶을 때 사용.
-20. padding과 margin의 차이
+21. padding과 margin의 차이
     - margin: 바깥쪽 여백
     - padding: 안쪽 여백
-21. inline vs block
+22. inline vs block
     - inline: width/height 적용 불가 / margin/padding bottom top 적용 불가
     - block: 무조건 줄바꿈 적용 width/height 등 적용 가능
-22. css selector 우선순위
+23. css selector 우선순위
     - !important > inline style > #id > .class/속성/가상 선택자 > 태그 > * 전체
-23. es6 문법 중 생각나는대로 말해달라
+24. es6 문법 중 생각나는대로 말해달라
     - 화살표 함수 (람다식)
     - let, const
     - class
     - export, import 를 이용하여 다른 곳에서도 함수나 변수를 활용 가능
-24. var, let, const 차이점
+25. var, let, const 차이점
     - var은 함수 레벨 스코프를 지원, let,const는 블록레벨 스코프를 지원한다.
     - var 사용시 블록 레벨에 전역 변수를 다시 재선언 하는 경우 해당 변수를 다시 선언한 값으로 읽음.
-25. use strict
+26. use strict
     - 기존에는 무시하던 에러들을 throwing함.
     - JavaScript 엔진의 최적화 작업을 어렵게 만드는 실수들을 바로잡음.
-26. callback을 왜 사용하는지?
+27. callback을 왜 사용하는지?
     - 하나의 작업을 시켜두고 작업이 완료 되었을 때 해당 함수를 실행하여 순차적으로 진행이 가능
-27. callback vs promise vs async await 차이
+28. callback vs promise vs async await 차이
     - callback은 중첩해서 많이 사용하면 가독성이 매우 떨어짐
     - promise는 then을 통해 프로미스 체이닝이 되어 있어서 실행 순서를 쉽게 파악 가능하고, 가독성도 깔끔. 또 catch로 각 작업의 에러를 핸들링 가능
     - Async/await은 promise를 좀 더 간략하고 직관적으로 알아 볼 수 있도록 promise를 지원
-28. react를 사용하는 이유?
+29. react를 사용하는 이유?
     - SPA: Client Side Rendering으로 빈 html 파일에서 스크립트로 안의 요소들을 채워나감으로 화면간 전환이 매우 빠름
     - 화면의 한 부분을 컴포넌트라는 단위로 나누어 독립적으로 관리 할 수 있음.
     - 가상의 DOM을 두어, 이전의 DOM과 비교하여 실제 변경된 부분만 DOM에 적용시켜 성능 개선
     - 대규모 커뮤니티가 이미 형성되어 있어 자료를 찾기 매우 편리
-29. 클래스 객체 인스턴스
+30. 클래스 객체 인스턴스
     - 클래스(Class): 객체를 만들어내기 위한 설계도 혹은 틀
     - 객체(Object): 설계도(클래스)를 기반으로 선언된 대상, 클래스의 인스턴스 라고도 부름
     - 인스턴스(Instance): 객체에 메모리가 할당되어 실제로 활용되는 실체
-30. 라이브러리 vs 프레임워크
+31. 라이브러리 vs 프레임워크
     - 라이브러리: 사용자가 전체적인 흐름을 만들며 라이브러리를 가져다 씀
     - 프레임워크: 프레임워크가 전체적인 흐름을 쥐고 있으며 사용자는 그 안에서 필요한 코드를 짜 넣음
-31. TCP vs UDP
+32. TCP vs UDP
     - TCP: 연결형 서비스, UDP보다 전송속도 느림, 신뢰성 있는 데이터를 전송함.
     -  연속성보다 신뢰성있는 전송이 중요할 때에 사용
     - UDP: 비연결형 서비스, TCP와 다르게 정보를 주고 받을 때 정보를 보내거나 받는다는 신호 절차를 거치지 않음.
     - 신뢰성 보다는 연속성이 중요한 실시간 서비스에 자주 사용
-32. 클로저
+33. 클로저
     -  자신이 선언되었을때의 환경 밖에서 호출되어도 그 환경에 접근할 수 있는 함수
     - 전역 변수의 사용을 억제 하기위해
     - 정보를 은닉하기 위해 
