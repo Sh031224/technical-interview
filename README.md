@@ -149,7 +149,27 @@
         - 순수함수 : 부수 효과가 없는 함수
           함수 동일한 인자가 주어졌을 떄 항상 같은 값을 리턴하는 함수
     - 가독성을 높이고 유지보수가 쉽다.
-
+47. Reflow Repaint 칭;
+    - Repaint : 화면에 변화가 있을 때 그리는 것
+    - Reflow : 화면 구조가 변경되었을 떄 뷰포트 내에서 렌더 트리의 노드의 정확한 위치와 크기를 계산하는 과정
+        - DOM 노드 추가 제거, DOM 노드 위치 변경, offset, scrollTop, scrollLeft와 같은 계산된 스타일 정보 요청 시 Reflow 발생
+49. HTTP란? HTTP HTTPS 차이
+    - HTTP : Cliend 요청이 있을 때만 서버가 응답하여 해당 정보를 전송하고 곧바로 연결을 종료하는 방식
+    - 단방향적 통신으로, Server가 Cliend로 요청을 보낼 수는 없다.
+    - HTTP 방식은 네트워크 상에서 정보를 누군가가 마음대로 열람, 수정이 가능하다. HTTPS는 열람 및 수정이 불가함.
+51. 웹 표준
+    - WWW측면을 서술하고 정의하는 공식 표준, 기술 규격을 가리키는 용어
+    - 불필요한 소스와 팔일을 줄여 웹에 여유 공간을 확보해 페이지 로딩 속도를 빨리 할 수 있어 사용자에 더 나은 편의를 제공한다.
+52. Restful API
+    - HTTP URI를 통해 자원을 명시하고, HTTP Method를 통해 자원의 CRUD Operation을 적용하는 것을 의미한다.
+    - 장점 
+        - HTTP프로톨의 인프라를 사용해 별도의 인프라를 구축할 필요 없음
+        - HTTP 표준 프로토콜에 따르는 모든 플랫폼에서 사용이 가능
+        - 서버와 클라이언트의 역햘을 명확하게 분리
+    - 단점 
+        - 표준이 존재하지 않음
+        - HTTP Method 형태가 제한적
+        - 구형 브라우저가 아직 제대로 지원해주지 못한다 - PUT, DELETE
 
 
 React 부분
@@ -222,4 +242,13 @@ React 부분
     - useMemo를 사용
     - React.PureComponent 사용 - 이전 props와 state를 얇게 비교하여 Component 렌더링 횟수 감소
     - React.lazy 사용 
+21. Redux란
+    - Redux는 store라고 불리는 state 컨테이너 개념을 기반으로 하는데, store 컴포넌트는 데이터를 props로 받을 수 있음.
+    - state를 변경하는 방법은 reducer를 통해 전달되는 store에 action을 보내는 것
+22. Redux-Thunk VS Redux-Saga
+    - 보일러 플레이트 코드량은 Redux-Thunk 가 더 적다.
+    - 난이도는 Redux-Thunk가 더 쉽다.
+    - 확장성은 Redux-Saga가 더 좋다. 
+    - Redux-Saga가 순수함수를 유지한다.
+    - Redux-Saga가 테스트가 쉽다.
 
