@@ -122,45 +122,42 @@
     -  자신이 선언되었을때의 환경 밖에서 호출되어도 그 환경에 접근할 수 있는 함수
     - 전역 변수의 사용을 억제 하기위해
     - 정보를 은닉하기 위해 
-34. JavaScript 자료형
-    - 원시타입 : Boolean, Null, String, Undefined, Number
-    - 객체타입 : Object
-36. 코드 스플리팅
+34. 코드 스플리팅
     - 하나의 큰 번들을 여러개의 작은 번들로 쪼개는 것
     - 필요한 번들만 로드 하여서 로딩 시간을 줄여줌.
     - 유저가 현재 필요하지 않은 코드는 로드 하지 않음으로써 앱의 성능이 크게 향상됨.
-38. Memoization
+35. Memoization
     - 컴퓨터 프로그램이 동일한 계산을 반복해야 할 때 이전에 계산한 값을 메모리에 저장함으로써 동일
       한 계산의 반복 수행을 제거하여 프로그램 실행 속도를 빠르게 하는 기술
-40. type, interface 차이
+36. type, interface 차이
     - interface는 상속을 하지만 type은 상속을 하지않고 선언적 확장을 한다.
     - interface 속도가 더 빠르다
         - interface는 단순한 객체만 만든다
         - type은 재귀적으로 순회하면서 속성을 머지하는데 일부 never가 나오면서 제대로 머지가 되지 않는다.
-42. function, arrow function 차이
+37. function, arrow function 차이
     - function : this는 자신을 가장 마지막으로 품고 있는 scope로 항상 변한다.
     - arrow function : 처음 바인딩 된 스코프 안에서 가리키는 this가 절대 변하지 않는다.
-44. npm vs yarn
+38. npm vs yarn
     - NPM과 YARN은 Node.js로 만들어진 모듈을 받아서 설치하고 관리해주는 프로그램
     - yarn이 더 빠르다 - 병렬 처리로 작업을 하기 때문에
     - 보안은 yarn이 더 강하다
-46. 함수형 프로그래밍이란?
+39. 함수형 프로그래밍이란?
     - 함수형 프로그래밍은 거의 모든 것을 순수 함수로 나누어 문제를 해결하는 기법
         - 순수함수 : 부수 효과가 없는 함수
           함수 동일한 인자가 주어졌을 떄 항상 같은 값을 리턴하는 함수
     - 가독성을 높이고 유지보수가 쉽다.
-47. Reflow Repaint 칭;
+40. Reflow Repaint 차이
     - Repaint : 화면에 변화가 있을 때 그리는 것
     - Reflow : 화면 구조가 변경되었을 떄 뷰포트 내에서 렌더 트리의 노드의 정확한 위치와 크기를 계산하는 과정
         - DOM 노드 추가 제거, DOM 노드 위치 변경, offset, scrollTop, scrollLeft와 같은 계산된 스타일 정보 요청 시 Reflow 발생
-49. HTTP란? HTTP HTTPS 차이
+41. HTTP란? HTTP HTTPS 차이
     - HTTP : Cliend 요청이 있을 때만 서버가 응답하여 해당 정보를 전송하고 곧바로 연결을 종료하는 방식
     - 단방향적 통신으로, Server가 Cliend로 요청을 보낼 수는 없다.
     - HTTP 방식은 네트워크 상에서 정보를 누군가가 마음대로 열람, 수정이 가능하다. HTTPS는 열람 및 수정이 불가함.
-51. 웹 표준
+42. 웹 표준
     - WWW측면을 서술하고 정의하는 공식 표준, 기술 규격을 가리키는 용어
     - 불필요한 소스와 팔일을 줄여 웹에 여유 공간을 확보해 페이지 로딩 속도를 빨리 할 수 있어 사용자에 더 나은 편의를 제공한다.
-52. Restful API
+43. Restful API
     - HTTP URI를 통해 자원을 명시하고, HTTP Method를 통해 자원의 CRUD Operation을 적용하는 것을 의미한다.
     - 장점 
         - HTTP프로톨의 인프라를 사용해 별도의 인프라를 구축할 필요 없음
@@ -228,7 +225,7 @@ React 부분
 16. useMemo
     - [] 안에 값이 바뀌었을 때만 다시 호출
     - useCallback과의 차이는 Callback은 함수를 반환, Memo는 값을 반환
-    - Hook이기 때문에 오직 함수형 컴포너틑 안에서만 사용 가능하다 - React.memo랑 차이점
+    - Hook이기 때문에 오직 함수형 컴포넌트 안에서만 사용 가능하다 - React.memo랑 차이점
 17. useEffect
     - async/await 을 직접적으로 사용하면 안됨
     - [] 안쓰면 렌더링 시, 쓰면 마운트 시
@@ -239,7 +236,6 @@ React 부분
     - ref 객체 안에 current 속성이 실제 요소
     - createRef을 함수형에서 작성 시 렌더링마다 ref가 초기화 된다.
 20. React의 최적화 방법
-    - useMemo를 사용
     - React.PureComponent 사용 - 이전 props와 state를 얇게 비교하여 Component 렌더링 횟수 감소
     - React.lazy 사용 
 21. Redux란
