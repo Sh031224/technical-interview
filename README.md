@@ -232,7 +232,8 @@ React 부분
     - ref 객체 안에 current 속성이 실제 요소
     - createRef을 함수형에서 작성 시 렌더링마다 ref가 초기화 된다.
 20. React의 최적화 방법
-    - React.PureComponent, React.memo - 이전 props와 state를 얇게 비교하여 Component 렌더링 횟수 감소
+    - React.PureComponent - 이전 props와 state를 얇게 비교하여 Component 렌더링 횟수 감소
+        - React.memo는 props만 비교
     - React.lazy 사용 
 21. Redux란
     - Redux는 store라고 불리는 state 컨테이너 개념을 기반으로 하는데, store 컴포넌트는 데이터를 props로 받을 수 있음.
