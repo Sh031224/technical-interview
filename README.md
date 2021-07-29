@@ -137,27 +137,23 @@
 37. function, arrow function 차이
     - function : this는 자신을 가장 마지막으로 품고 있는 scope로 항상 변한다.
     - arrow function : 처음 바인딩 된 스코프 안에서 가리키는 this가 절대 변하지 않는다.
-38. npm vs yarn
-    - NPM과 YARN은 Node.js로 만들어진 모듈을 받아서 설치하고 관리해주는 프로그램
-    - yarn이 더 빠르다 - 병렬 처리로 작업을 하기 때문에
-    - 보안은 yarn이 더 강하다
-39. 함수형 프로그래밍이란?
+38. 함수형 프로그래밍이란?
     - 함수형 프로그래밍은 거의 모든 것을 순수 함수로 나누어 문제를 해결하는 기법
         - 순수함수 : 부수 효과가 없는 함수
           함수 동일한 인자가 주어졌을 떄 항상 같은 값을 리턴하는 함수
     - 가독성을 높이고 유지보수가 쉽다.
-40. Reflow Repaint 차이
+39. Reflow Repaint 차이
     - Repaint : 화면에 변화가 있을 때 그리는 것
     - Reflow : 화면 구조가 변경되었을 떄 뷰포트 내에서 렌더 트리의 노드의 정확한 위치와 크기를 계산하는 과정
         - DOM 노드 추가 제거, DOM 노드 위치 변경, offset, scrollTop, scrollLeft와 같은 계산된 스타일 정보 요청 시 Reflow 발생
-41. HTTP란? HTTP HTTPS 차이
+40. HTTP란? HTTP HTTPS 차이
     - HTTP : Client 요청이 있을 때만 서버가 응답하여 해당 정보를 전송하고 곧바로 연결을 종료하는 방식
     - 단방향적 통신으로, Server가 Cliend로 요청을 보낼 수는 없다.
     - HTTP 방식은 네트워크 상에서 정보를 누군가가 마음대로 열람, 수정이 가능하다. HTTPS는 열람 및 수정이 불가함.
-42. 웹 표준
+41. 웹 표준
     - WWW측면을 서술하고 정의하는 공식 표준, 기술 규격을 가리키는 용어
     - 불필요한 소스와 팔일을 줄여 웹에 여유 공간을 확보해 페이지 로딩 속도를 빨리 할 수 있어 사용자에 더 나은 편의를 제공한다.
-43. Restful API
+42. Restful API
     - HTTP URI를 통해 자원을 명시하고, HTTP Method를 통해 자원의 CRUD Operation을 적용하는 것을 의미한다.
     - 장점 
         - HTTP프로톨의 인프라를 사용해 별도의 인프라를 구축할 필요 없음
@@ -236,7 +232,7 @@ React 부분
     - ref 객체 안에 current 속성이 실제 요소
     - createRef을 함수형에서 작성 시 렌더링마다 ref가 초기화 된다.
 20. React의 최적화 방법
-    - React.PureComponent 사용 - 이전 props와 state를 얇게 비교하여 Component 렌더링 횟수 감소
+    - React.PureComponent, React.memo - 이전 props와 state를 얇게 비교하여 Component 렌더링 횟수 감소
     - React.lazy 사용 
 21. Redux란
     - Redux는 store라고 불리는 state 컨테이너 개념을 기반으로 하는데, store 컴포넌트는 데이터를 props로 받을 수 있음.
